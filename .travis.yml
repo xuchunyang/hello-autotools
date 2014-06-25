@@ -1,11 +1,9 @@
 language: c
 
 compiler:
-  - clang
   - gcc
 
-before_script: autoreconf
-
 script:
+  - ./autogen.sh
   - ./configure
   - make
