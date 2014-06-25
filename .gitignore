@@ -1,0 +1,25 @@
+# http://www.gnu.org/software/automake
+
+Makefile.in
+
+# http://www.gnu.org/software/autoconf
+
+/autom4te.cache
+/aclocal.m4
+/compile
+/configure
+/depcomp
+/install-sh
+/missing
+/stamp-h1
+
+# http://stackoverflow.com/questions/3290908/which-files-generated-by-autotools-should-i-keep-in-version-control-repository
+Makefile
+/src/Makefile.in
+/config.h.in
+/config.h
+/config.log
+/config.status
+
+# misc
+*~
