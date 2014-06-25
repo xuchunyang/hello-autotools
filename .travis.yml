@@ -3,7 +3,9 @@ language: c
 compiler:
   - gcc
 
-script:
+before_script:
   - ./autogen.sh
+
+script:
   - ./configure
   - make
