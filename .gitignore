@@ -23,3 +23,5 @@ Makefile
 
 # misc
 *~
+
+/src/.deps/
