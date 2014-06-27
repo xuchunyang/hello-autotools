@@ -1,3 +1,6 @@
 #!/bin/sh
 
-autoreconf --install || exit 1
+aclocal --install -I m4 &&
+autoconf &&
+automake --add-missing --copy &&
+./configure "$@"
