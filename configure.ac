@@ -21,33 +21,6 @@ if test "$TAG" = :; then
 fi
 
 dnl check for libraries
-PKG_CHECK_MODULES([cairo], [cairo])
-PKG_CHECK_MODULES([fontconfig], [fontconfig])
-PKG_CHECK_MODULES([gtk3], [gtk+-3.0 >= 3.12.2])
-
-
-AC_ARG_WITH([gtk], AS_HELP_STRING([--with-gtk], [Build with the GTK+ interface])) dnl defalut is "--without-gtk"
-AS_IF([test "x$with_gtk" = "xyes"], [
-   PKG_CHECK_MODULES([GTK], [gtk+-2.0])
-])
-
-PKG_CHECK_MODULES([GLIB], [glib-2.0])
-
-dnl Example of default-enabled feature
-AC_ARG_ENABLE([foo],
-    AS_HELP_STRING([--disable-foo], [Disable feature foo]))
-
-AS_IF([test "x$enable_foo" != "xno"], [
-  dnl Do the stuff needed for enabling the feature
-])
-
-dnl Example of default-disabled feature
-AC_ARG_ENABLE([bar],
-    AS_HELP_STRING([--enable-bar], [Enable feature bar]))
-
-AS_IF([test "x$enable_bar" = "xyes"], [
-  dnl Do the stuff needed for enabling the feature
-])
 
 
 dnl check for headers
