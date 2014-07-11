@@ -12,6 +12,7 @@ Makefile.in
 /install-sh
 /missing
 /stamp-h1
+/src/.deps
 
 # http://stackoverflow.com/questions/3290908/which-files-generated-by-autotools-should-i-keep-in-version-control-repository
 Makefile
