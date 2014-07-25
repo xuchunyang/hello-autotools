@@ -2,7 +2,7 @@ dnl Prelude.
 AC_INIT([helloworld], [0.1], [bug-report@xuchunyang.me]) dnl package-name, version, bug-report-address
 AC_PREREQ([2.65])                                        dnl minimum Autoconf version
 dnl AC_CONFIG_AUX_DIR([build-aux])            dnl Keep auxiliary scripts such as install-sh and depcomp should be in that dir
-AM_INIT_AUTOMAKE([foreign -Wall -Werror]) dnl foreign: not in GNU Coding Style (including COPYRIGHT AUTHORS)
+AM_INIT_AUTOMAKE([foreign -Wall]) dnl foreign: not in GNU Coding Style (including COPYRIGHT AUTHORS)
 
 AC_DEFINE([PACKAGE_URL], [http://xuchunyang.me/], [the homepage of this package]) dnl => create a define n config.h
 AC_SUBST([FOO], [foo])          dnl define $(FOO] as foo in Makefile
@@ -21,7 +21,15 @@ if test "$TAG" = :; then
 fi
 
 dnl check for libraries
+dnl 采用 pkg-config
+# glib and wavpack support
+PKG_CHECK_MODULES(wavpack, wavpack)
+PKG_CHECK_MODULES(glib, glib-2.0)
 
+AC_SUBST(glib_CFLAGS)
+AC_SUBST(glib_LIBS)
+AC_SUBST(wavpack_CFLAGS)
+AC_SUBST(wavpack_LIBS)
 
 dnl check for headers
 dnl check for typedefs, structures, and compiler characteristics
